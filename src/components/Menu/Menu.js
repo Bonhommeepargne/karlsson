@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
 // import Context from "./src/Context";
 
-export default function App() {
+export default function Menu({route, navigation}) {
 
   return (
     <View style={styles.container}>

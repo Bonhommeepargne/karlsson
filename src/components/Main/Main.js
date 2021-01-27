@@ -1,35 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+const Stack = createStackNavigator();
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Store from './../../context';
-// import Context from "./src/Context";
+import Company from './Company/Company';
+import Screening from './Screening/Screening';
 
 export default function Main() {
-
   return (
-    <Store.Consumer>
-    {(store) => (
-      <View style={styles.container}>
-        <Text>Main</Text>
-        <Text>Open up App.js to start working on your app! {store.compteur.value}</Text>
-        <Button
-          title="To Increment"
-          onPress={() => {store.compteur.change(store.compteur.value + 1)}}
-        />
-      </View>
-    )}
-    </Store.Consumer>
+    <View style={styles.container}>
+    <Text>Company</Text>
+      <Stack.Navigator initialRouteName="Company" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Company" component={Company} />
+        <Stack.Screen name="Screening" component={Screening} />
+      </Stack.Navigator>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    alignItems: 'center',
-    justifyContent: "space-evenly",
-    borderWidth: 1,
-    borderColor: "green",
-  },
+
 });

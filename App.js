@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button, StatusBar } from 'react-native';
-// import Context from "./src/context";
+import Context from "./src/context";
 import Header from "./src/components/Header/Header";
 import Main from "./src/components/Main/Main";
 import Menu from "./src/components/Menu/Menu";
@@ -32,7 +32,8 @@ export default function App() {
         title="To Increment"
         onPress={() => {store.compteur.change(55)}}
       /> */}
-      {/* <Context.Provider value={store}> */}
+      <Context.Provider value={store}>
+        {/* <Stack.Navigator screenOptions={{headerShown: false}}> */}
         {/* <View v-if="loged"> */}
         <View style={styles.header}>
           <Header />
@@ -45,7 +46,7 @@ export default function App() {
         {/* <View v-if="!loged"> */}
         {/* <Login> */}
         {/* </View> */}
-      {/* </Context.Provider> */}
+      </Context.Provider>
     </View>
   );
 }

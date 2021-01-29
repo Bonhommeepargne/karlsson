@@ -8,7 +8,6 @@ import Screening from './Screening/Screening';
 export default function Main() {
   return (
     <View style={styles.container}>
-    <Text>Company</Text>
       <Stack.Navigator initialRouteName="Company" screenOptions={{headerShown: false}}>
         <Stack.Screen name="Company" component={Company} />
         <Stack.Screen name="Screening" component={Screening} />
@@ -18,5 +17,11 @@ export default function Main() {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    borderWidth: 1,
+    borderColor: "green",
+  },
 });

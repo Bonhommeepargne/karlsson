@@ -34,7 +34,9 @@ export default function App() {
             <Header />
           </View>
 
-          <Main style={styles.main} />
+          <View style={styles.main}>
+            <Main />
+          </View>
 
           <View style={styles.menu}>
             <Menu />
@@ -50,13 +52,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   header: {
     height: 55,
     width: "100%",
   },
   main: {
+    flex: 1,
     width: "100%",
   },
   menu: {

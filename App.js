@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button, StatusBar } from 'react-native';
+
+import firebase from "./src/firebase";
 import Context from "./src/context";
+
 import Header from "./src/components/Header/Header";
 import Main from "./src/components/Main/Main";
 import Menu from "./src/components/Menu/Menu";

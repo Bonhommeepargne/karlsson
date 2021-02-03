@@ -9,10 +9,10 @@ export default function Screening() {
     {(store) => (
       <View style={styles.container}>
         <Text>Screening</Text>
-        <Text>Open up App.js to start working on your app! {store.compteur.value}</Text>
+        <Text>Open up App.js to start working on your app! {store.main.value}</Text>
         <Button
           title="To Increment"
-          onPress={() => {store.compteur.change(store.compteur.value + 1)}}
+          onPress={() => {}}
         />
       </View>
     )}

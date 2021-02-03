@@ -1,21 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import * as RootNavigation from './../../RootNavigation';
-// import Context from "./src/Context";
+import Store from './../../context';
 
 export default function App() {
 
   return (
-    <View style={styles.container}>
-        <Text>test</Text>
-    </View>
+    <Store.Consumer>
+      {(store) => (
+        <View style={styles.container}>
+          <Text>{store.main.value}</Text>
+        </View>
+      )}
+    </Store.Consumer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+        container: {
+        flex: 1,
     width: "100%",
     height: "100%",
     alignItems: 'center',

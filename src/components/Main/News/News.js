@@ -8,8 +8,8 @@ export default function Company(props) {
     <Store.Consumer>
     {(store) => (
       <View style={styles.container}>
-        <Text>Company</Text>
-        <Text>Open up App.js to start working on your app! </Text>
+        <Text>News</Text>
+        <Text>Open up App.js to start working on your app! {store.main.value}</Text>
         <Button
           title="To Increment"
           onPress={() => {}}

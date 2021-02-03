@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Store from './../../../context';
 
-export default function Company() {
-
+export default function Company(props) {
+  console.log("props.navigation", props.navigation)
+  console.log("props", props)
   return (
     <Store.Consumer>
     {(store) => (

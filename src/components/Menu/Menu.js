@@ -1,20 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-// import { NavigationContainer } from '@react-navigation/native';
-// import Context from "./src/Context";
+import React, { useState, useEffect} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import * as RootNavigation from './../../RootNavigation';
 
-export default function Menu({route, navigation}) {
+export default function Menu() {
+
+  const [ namePage, setNamePage ] = useState('');
+  useEffect(() => {
+    setNamePage(RootNavigation.getCurrentRoute().name);
+  }, [ ]);
 
   return (
     <View style={styles.container}>
-    <Text>Menu</Text>
-    {/* <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
-    </NavigationContainer> */}
+      <Button
+        title='Company'
+        onPress={() => { RootNavigation.navigate('Company'); console.log("route :> ", RootNavigation.getCurrentRoute().name); }}
+      />
+      <Button
+        title='Screenings'
+        onPress={() => { RootNavigation.navigate('Screening'); console.log("route :> ", RootNavigation.getCurrentRoute().name); }}
+      />
+      <Button
+        title='compteur'
+        onPress={() => { console.log('c') }}
+      />
     </View>
   );
 }

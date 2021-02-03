@@ -5,6 +5,7 @@ import Context from "./src/context";
 import Header from "./src/components/Header/Header";
 import Main from "./src/components/Main/Main";
 import Menu from "./src/components/Menu/Menu";
+import { navigationRef } from './src/RootNavigation';
 
 export default function App() {
 
@@ -18,7 +19,6 @@ export default function App() {
 
   function changeCompteur(newValue) {
     setStore((oldState) => {
-      console.log("oldState :> ", oldState);
       const NewCompteur = oldState.compteur;
       NewCompteur.value = newValue;
       return { ...oldState, compteur: NewCompteur };
@@ -29,7 +29,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar />
       <Context.Provider value={store}>
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <View style={styles.header}>
             <Header />
           </View>
@@ -41,7 +41,7 @@ export default function App() {
           <View style={styles.menu}>
             <Menu />
           </View>
-          </NavigationContainer>
+        </NavigationContainer>
       </Context.Provider>
     </View>
   );

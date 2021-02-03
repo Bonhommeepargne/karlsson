@@ -4,6 +4,7 @@ const Stack = createStackNavigator();
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Company from './Company/Company';
 import Screening from './Screening/Screening';
+import Menu from '../Menu/Menu';
 
 export default function Main() {
   return (
